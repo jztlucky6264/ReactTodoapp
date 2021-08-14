@@ -1,13 +1,101 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+.main_div {
+  width: 100%;
+  height: 100vh;
+  background: grey;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+h1 {
+  font-family: cursive;
+  margin-top: -5px;
+  background: white;
+  color: black;
+  padding: 0%;
+  text-shadow: 4px 0px rgba(0, 0, 0, 0.3);
+}
+.list_div {
+  flex: 1;
+  height: 59vh;
+  border-radius: 15px;
+}
+
+.center_div {
+  background: white;
+  height: 90vh;
+  border-radius: 15px;
+  box-shadow: 5px 5px 25px -5px rgba(0, 0, 0, 0.5);
+}
+input {
+  font-family: cursive;
+  color: grey;
+  height: 30px;
+  font-weight: bold;
+  width: 60%;
+  text-align: center;
+  outline: none;
+  border: none;
+  background: transparent;
+  border-bottom: 2px solid gray;
+}
+.btn {
+  width: 30px;
+  color: grey;
+  background: white;
+  /* box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);*/
+}
+.btn:hover {
+  color: #20bf6b;
+}
+ol {
+  margin-top: 30px;
+}
+ol li {
+  letter-spacing: 2px;
+  font-family: cursive;
+  padding-left: 10px;
+  text-align: left;
+  font-size: 20px;
+  font-weight: 500;
+  min-height: 40px;
+  align-items: center;
+  display: flex;
+  text-transform: capitalize;
+  color: grey;
+  overflow: auto;
+}
+.bi {
+  color: #8466aa;
+  margin-left: -65px;
+  display: inline-block;
+  flex: 1;
+  position: relative;
+}
+.delet {
+  color: grey;
+  background: whitesmoke;
+}
+.delet:hover {
+  color: red;
+  background-color: rgb(160, 46, 65);
+}
+.todolist {
+  display: flex;
+  align-items: center;
+  text-align: center;
 }

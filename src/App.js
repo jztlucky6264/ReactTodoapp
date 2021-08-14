@@ -1,25 +1,60 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import ToDoList from "./ToDoList";
+import AddCircleIcon from "@material-ui/icons/AddCircle";
 
-function App() {
+const App = () => {
+  const [inputList, setInputList] = useState("");
+  const [items, setItems] = useState([]);
+  const itemEvent = (event) => {
+    setInputList(event.target.value);
+  };
+  const click = () => {
+    setItems((oldItems) => {
+      return [...oldItems, inputList];
+    });
+    setInputList("");
+  };
+  const deleteItems = (id) => {
+    console.log("d");
+    setItems((oldItems) => {
+      return oldItems.filter((arrElem, index) => {
+        return index !== id;
+      });
+    });
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div className="main_div">
+        <div className="center_div">
+          <br />
+          <h1>TODO LIST</h1>
+          <br />
+          <input
+            type="text"
+            placeholder="Add a Items"
+            value={inputList}
+            onChange={itemEvent}
+          ></input>
+          <AddCircleIcon className="btn" onClick={click}>
+            +
+          </AddCircleIcon>
+          <div className="list_div">
+            <ol>
+              {items.map((itemval, index) => {
+                return (
+                  <ToDoList
+                    key={index}
+                    id={index}
+                    onSelect={deleteItems}
+                    text={itemval}
+                  />
+                );
+              })}
+            </ol>
+          </div>
+        </div>
+      </div>
+    </>
   );
-}
-
+};
 export default App;
